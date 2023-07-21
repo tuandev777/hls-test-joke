@@ -1,0 +1,11 @@
+{
+  "general": {
+    "login": "Login",
+    "edit": "Edit",
+    "funny": "Funny",
+    "suck": "Not funny",
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "no_joke": "That's all the jokes for today! Come back another day!"
+  }
+}

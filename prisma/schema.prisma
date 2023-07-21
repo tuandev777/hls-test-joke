@@ -1,0 +1,48 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+  // directUrl         = env("POSTGRES_URL_NON_POOLING")
+  // shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model post {
+  id        Int          @id @default(autoincrement())
+  locale    postlocale[]
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  action    action?
+}
+
+model postlocale {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  description String?
+  content     String?
+  post        post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId      Int
+  language    language @relation(fields: [languageKey], references: [key])
+  languageKey String
+
+  @@unique([languageKey, postId])
+}
+
+model action {
+  id      Int  @id @default(autoincrement())
+  like    Int  @default(0)
+  dislike Int  @default(0)
+  post    post @relation(fields: [postId], references: [id])
+  postId  Int  @unique
+}
+
+model language {
+  id   Int          @id @default(autoincrement())
+  name String
+  key  String       @unique
+  post postlocale[]
+}
