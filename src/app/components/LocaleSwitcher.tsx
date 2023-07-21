@@ -28,7 +28,7 @@ export default function LocaleSwitcher({ userName }) {
 
   return (
     <div className=" flex flex-row space-x-2">
-      <select value={locale} onChange={handleChangeLocale}>
+      {/* <select value={locale} onChange={handleChangeLocale}>
         {[
           { title: t("vietnamese"), key: "vi" },
           { title: t("english"), key: "en" },
@@ -39,7 +39,7 @@ export default function LocaleSwitcher({ userName }) {
             </option>
           )
         })}
-      </select>
+      </select> */}
       <div className=" flex flex-col">
         <span className="text-slate-500 italic ">Handycraff by</span>
         {userName ? (
