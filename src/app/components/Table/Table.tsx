@@ -48,7 +48,8 @@ export default function TableLoading({ data = [], pagination }) {
               {t("edit")}
             </Link>
           )
-        } else if (item === "like" || item === "dislike") return record?.action[item]
+        } else if (item === "like" || item === "dislike")
+          return record?.action ? record?.action[item] : 0
         else return text
       },
     })
