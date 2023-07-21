@@ -1,5 +1,5 @@
 import React, { useMemo } from "react"
-import { Table as TableAnt, Pagination, Button } from "antd"
+import { Table as TableAnt, Pagination, Button, Space } from "antd"
 import { useLocale, useTranslations } from "next-intl"
 import Link from "next-intl/link"
 import { API_URL } from "@/src/configs/generals"
@@ -57,7 +57,10 @@ export default function TableLoading({ data = [], pagination }) {
 
   return (
     <div className=" container m-auto space-y-6">
-      <button onClick={handleClone}>Clone</button>
+      <Space direction="horizontal">
+        <button onClick={handleClone}>Clone</button>
+        <Link href={"/post/create"}>Create</Link>
+      </Space>
       <TableAnt
         columns={renderColumn}
         dataSource={data?.map((item) => ({
