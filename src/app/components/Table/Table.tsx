@@ -59,6 +59,7 @@ export default function TableLoading({ data = [], pagination }) {
     <div className=" container m-auto space-y-6">
       <Space direction="horizontal">
         <button onClick={handleClone}>Clone</button>
+        <button onClick={() => router.refresh()}>Refresh</button>
         <Link href={"/post/create"}>Create</Link>
       </Space>
       <TableAnt
