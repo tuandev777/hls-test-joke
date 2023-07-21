@@ -28,20 +28,23 @@ export default function Action({ postId }) {
   }
   if (postId) {
     return (
-      <div className="text-center">
-        <button
-          onClick={() => handleAction("like")}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-3"
-        >
-          {t("funny")}
-        </button>
-        <button
-          onClick={() => handleAction("dislike")}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-        >
-          {t("suck")}
-        </button>
-      </div>
+      <>
+        <div className="border-t border-slate-200 pt-6 w-1/2 m-auto"></div>
+        <div className="text-center">
+          <button
+            onClick={() => handleAction("like")}
+            className="bg-[#2c7EDB] text-white  py-2 px-4 rounded mx-3"
+          >
+            {t("funny")}
+          </button>
+          <button
+            onClick={() => handleAction("dislike")}
+            className="bg-[#29B363]  text-white  py-2 px-4 rounded"
+          >
+            {t("suck")}
+          </button>
+        </div>
+      </>
     )
   } else return <></>
 }

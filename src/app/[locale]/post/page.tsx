@@ -8,7 +8,7 @@ async function getData(locale, searchParams) {
     method: "GET",
     cache: "no-cache",
     headers: {
-      "Accept-Language": locale || "vi",
+      "Accept-Language": locale || "en",
     },
   })
   // The return value is *not* serialized

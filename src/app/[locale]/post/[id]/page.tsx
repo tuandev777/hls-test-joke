@@ -12,7 +12,7 @@ async function getData(locale, id) {
     method: "GET",
     cache: "no-cache",
     headers: {
-      "Accept-Language": locale || "vi",
+      "Accept-Language": locale || "en",
     },
   })
   // The return value is *not* serialized
