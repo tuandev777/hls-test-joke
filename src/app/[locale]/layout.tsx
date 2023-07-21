@@ -44,7 +44,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
             <footer className="footer py-6  ">
               <div className="border-t border-slate-300 pb-8 "></div>
               <div className="text-center flex flex-col container m-auto">
-                <span>
+                <span className="text-slate-500">
                   This website is created as part of Hisolutions program. the materials contained on
                   this website are provided for general information only and do not contribure any
                   form of advice. HLS assumes no responsibility for the accuracuracy of any
