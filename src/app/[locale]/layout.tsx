@@ -30,17 +30,19 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <main>
-            <div className="container m-auto flex justify-between items-center py-3">
-              <Link href={"/" + locale}>
-                <Image priority src={logo} alt="logo" width={80} height={80} />
-              </Link>
-              <div>
-                <LocaleSwitcher userName={session?.user?.name} />
-              </div>
-            </div>
             <div className="content">
-              <div className="content-inside">{children}</div>
+              <div className="container m-auto flex justify-between items-center py-3">
+                <Link href={"/" + locale}>
+                  <Image priority src={logo} alt="logo" width={80} height={80} />
+                </Link>
+                <div>
+                  <LocaleSwitcher userName={session?.user?.name} />
+                </div>
+              </div>
+              {children}
+              <div className="push"></div>
             </div>
+
             <footer className="footer py-6  ">
               <div className="border-t border-slate-300 pb-8 "></div>
               <div className="text-center flex flex-col container m-auto">
