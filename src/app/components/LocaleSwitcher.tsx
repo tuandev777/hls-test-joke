@@ -51,8 +51,9 @@ export default function LocaleSwitcher({ userName }) {
             </span>
           </span>
         ) : (
-          <span>
-            <Link href={"/login"}>{t("login")}</Link>
+          <span className="text-right">
+            Jim HLS
+            {/* <Link href={"/login"}>{t("login")}</Link> */}
           </span>
         )}
       </div>
